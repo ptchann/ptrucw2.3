@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CHUYỂN ĐỔI TIỀN TỆ</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <h1 class="heading text-center display-2">
+        Chuyển đổi tiền tệ</h1>
+    <div class="container">
+
+        <div class="main">
+
+            <div class="form-group">
+                <label>
+                    Nhập số tiền:
+                </label>
+                <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');"
+                class="form-control searchBox" placeholder="0" id="oamount">
+                
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Từ</span>
+                        </div>
+                        <select class="form-control from" id="sel1">
+                            <option value="">Chọn</option>
+                            <option value="VND">VND</option>
+                            <option value="USD">USD</option>
+                            <option value="JPY">JPY</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Đến</span>
+                        </div>
+                        <select class="form-control to" id="sel2">
+                            <option value="">Chọn</option>
+                            <option value="VND">VND</option>
+                            <option value="USD">USD</option>
+                            <option value="JPY">JPY</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button class="btn btn-primary convert m-2" type="submit">
+                    Đổi
+                </button>
+            </div>
+
+        </div>
+
+        <div id="finalAmount" class="text-center">
+            <h2>Chuyển đổi:
+                <span class="finalValue" style="color:red;">
+                </span>
+            </h2>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
